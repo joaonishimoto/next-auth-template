@@ -13,9 +13,9 @@ const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         const user = {
           id: '1',
-          email: 'user@email.com',
-          password: '123',
-          name: 'User Hardcoded',
+          email: 'joao.oliveira@engetak.com',
+          password: '12345',
+          name: 'João Nishimoto',
           role: 'admin'
         }
 

@@ -7,7 +7,7 @@ export default function PublicPage () {
 
   return (
     <div className="w-full max-w-screen-xl h-screen flex flex-col justify-center items-center">
-      <h1>Public page</h1>
+      Public
       {session && <pre className="bg-slate-900 text-slate-50 p-10 rounded-lg mt-10">{JSON.stringify(session, null, 2)}</pre>}
     </div>
   )
