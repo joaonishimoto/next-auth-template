@@ -2,7 +2,7 @@ import NextAuth from 'next-auth/next'
 import { NextAuthOptions } from 'next-auth'
 import CredentialProvider from 'next-auth/providers/credentials'
 
-import { User, Users } from '@/app/api/users'; // Importe a interface e os usuários do arquivo 'users.ts'
+import { Users } from '@/app/api/users';
 
 
 const authOptions: NextAuthOptions = {
@@ -14,17 +14,21 @@ const authOptions: NextAuthOptions = {
         password: { label: 'Password', type: 'password' }
       },
       async authorize(credentials) {
-        
-        const user = Users[1]
 
-        const isValidEmail = user.email === credentials?.email
-        const isValidPassword = user.password === credentials?.password
+        const findUser = Users.find(user => user.email === credentials?.email && user.password === credentials?.password)
+
+        if (!findUser) {
+          return null
+        }
+
+        const isValidEmail = findUser.email === credentials?.email
+        const isValidPassword = findUser.password === credentials?.password
 
         if (!isValidEmail || !isValidPassword) {
           return null
         }
 
-        return user
+        return findUser
       }
     })
   ],

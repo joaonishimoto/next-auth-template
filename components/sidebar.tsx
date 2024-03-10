@@ -2,9 +2,8 @@ import { HomeIcon, LockIcon, LogOut, UnlockIcon } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
 
-import { SignOutButton } from './sign-out-button'
-import { getServerSession } from 'next-auth'
-import { Separator } from "./ui/separator";
+import { getServerSession } from 'next-auth';
+import { SignOutButton } from './sign-out-button';
 
 const Sidebar = async () => {
   const session = await getServerSession()
@@ -60,7 +59,5 @@ const Sidebar = async () => {
   )
 }
 
-export { Sidebar }
+export { Sidebar };
 
-
-  <li><SignOutButton>sair</SignOutButton></li>
