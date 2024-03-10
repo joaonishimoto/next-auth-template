@@ -1,9 +1,10 @@
-import { HomeIcon, LockIcon, LogOut, UnlockIcon } from "lucide-react";
+import { HomeIcon, LockIcon, LogOut, MoonIcon, UnlockIcon } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "./ui/badge";
 
 import { getServerSession } from 'next-auth';
 import { SignOutButton } from './sign-out-button';
+import { Separator } from "./ui/separator";
 
 const Sidebar = async () => {
   const session = await getServerSession()
@@ -13,10 +14,14 @@ const Sidebar = async () => {
         <div className="flex flex-col gap-2">
           <div className="flex h-[60px] items-center px-6">
             <Link className="flex items-center gap-2 font-semibold" href="/">
-              <HomeIcon className="h-6 w-6" />
-              <span className="">Acme Inc</span>
+              <MoonIcon className="h-6 w-6" />
+              <span className="">Brand</span>
             </Link>
           </div>
+          <div className="bg-zinc-100 flex items-center justify-center mx-5">
+            <Separator className=""/>
+          </div>
+          
           <div className="flex-1">
             <nav className="grid items-start px-4 text-sm font-medium">
               <Link
@@ -24,7 +29,7 @@ const Sidebar = async () => {
                 href="/"
               >
                 <HomeIcon className="h-4 w-4" />
-                Home
+                Dashboard
               </Link>
               <Link
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"

@@ -78,15 +78,18 @@ export function DataTable<TData, TValue>({
   })
 
   useEffect(() => {
-    {role != "admin" && table.getColumn('name')?.setFilterValue(name)};
-  });
+    if (role !== "admin") {
+        table.getColumn('name')?.setFilterValue(name);
+    }
+  }, [role, name, table]);
 
   return (
     <>
       {/* Filters */}
 
       <div className='flex items-center justify-between'>
-      {role == "admin" && <div className='flex items-center py-4'>
+        {role == "admin" && 
+        <div className='flex items-center py-4'>
           <Input
             placeholder='Search by name...'
             value={(table.getColumn('name')?.getFilterValue() as string) ?? ''}

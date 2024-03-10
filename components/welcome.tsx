@@ -15,9 +15,9 @@ export function Welcome() {
   const { name, email, role, points }: User = session?.user || {}
 
   return (
-    <div>
-      <h1 className="text-teal-400 text-3xl font-bold ">Welcome,</h1>
-      <p className='text-teal-600 mt-1'>{name}</p>
+    <div className=''>
+      <h2 className="inline text-teal-400 text-xl">Welcome, </h2>
+      <h1 className='inline text-teal-500 text-xl font-bold'>{name}!</h1>
     </div>
   )
 }
