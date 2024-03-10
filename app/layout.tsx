@@ -21,7 +21,7 @@ export default function RootLayout({
     <AuthProvider>
       <html lang="en">
         <body className={inter.className}>
-          <div className="grid min-h-screen w-full overflow-hidden lg:grid-cols-[280px_1fr]">
+          <div className="grid min-h-screen w-full overflow-hidden lg:grid-cols-[200px_1fr]">
             <Sidebar />
             <div className="flex justify-center items-center">{children}</div>
           </div>
