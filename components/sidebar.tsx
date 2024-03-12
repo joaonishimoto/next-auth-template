@@ -11,7 +11,7 @@ const Sidebar = async () => {
   
   return (
     <aside className="hidden border-r bg-teal-100/40 lg:block dark:bg-gray-800/40">
-        <div className="flex flex-col gap-2">
+        <div className="fixed flex flex-col gap-2">
           
           <div className="flex h-[60px] items-center p-6 mb-10 mt-4">
             <Link className="flex items-center gap-2 font-semibold text-xl text-zinc-950" href="/">
@@ -28,7 +28,7 @@ const Sidebar = async () => {
               >
                 <HomeIcon className="h-4 w-4 text-teal-400" />
                 <p className="text-teal-800 font-semibold">Dashboard</p>
-                <span className="bg-teal-400 w-0.5 h-4 ml-auto rounded"></span>
+                <span className="bg-teal-400 w-0.5 h-4 rounded"></span>
               </Link>
               <Link
                 className="group flex items-center gap-6 rounded-lg py-2 text-gray-400 transition-all hover:text-teal-400"

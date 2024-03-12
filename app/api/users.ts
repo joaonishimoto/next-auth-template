@@ -4,7 +4,7 @@ export interface User {
   password: string;
   name: string;
   role: string;
-  points: number;
+  points: string;
 }
 
 // Declare os usuários
@@ -15,7 +15,7 @@ export const Users: User[] = [
     password: "12345",
     name: "João Nishimoto",
     role: "admin",
-    points: 1
+    points: "João Nishimoto",
   },
   {
     id: "2",
@@ -23,7 +23,7 @@ export const Users: User[] = [
     password: "12345",
     name: "Gustavo Miranda",
     role: "user",
-    points: 1
+    points: "3050"
   },
   // Adicione mais usuários conforme necessário
 ];

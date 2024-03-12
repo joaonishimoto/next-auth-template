@@ -1,15 +1,35 @@
+'use client'
+
+interface User {
+  name?: string | null | undefined;
+  email?: string | null | undefined;
+  role?: string | null | undefined;
+  points?: string | null | undefined;
+}
+
+import { useSession } from 'next-auth/react'
+
+
 import { MyTable } from '@/components/table-tasks/mytable';
 import { Welcome } from '@/components/welcome';
+import { Points } from './points';
+import { Divide } from 'lucide-react';
 
-export function Main() {
+export function Dashboard() {
+
+  const { data: session } = useSession()
+
+  const { name, email, role, points }: User = session?.user || {}
+
   return (
+    session ? (
     <main className="flex-1 p-6">
       <header className="flex justify-between items-center">
         <div>
           <Welcome />
         </div>
         <div className="rounded-full px-4 py-1 shadow bg-teal-100">
-          <span className="text-teal-400 text-sm font-medium">500 pts</span>
+          <Points />
         </div>
       </header>
       <section className="grid grid-cols-3 gap-6 mt-6">
@@ -31,5 +51,6 @@ export function Main() {
         </div>
       </section>
     </main>
+    ) : (<div>dashboard</div>)
   )
 }

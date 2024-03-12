@@ -39,7 +39,7 @@ const authOptions: NextAuthOptions = {
       if (user) {
         return {
           ...token,
-          role: customUser.role
+          role: customUser.role,
         }
       }
 
